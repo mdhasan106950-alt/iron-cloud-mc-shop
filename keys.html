@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crate Keys - IRON CLOUD MC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="IRON CLOUD MC">
+                <span>IRON CLOUD MC</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="store.html" class="nav-link">Store</a>
+                <a href="keys.html" class="nav-link active">Crate Keys</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="support.html" class="nav-link">Support</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Keys Header -->
+    <section class="hero" style="height: 40vh; min-height: 300px;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Crate Keys</h1>
+            <p class="hero-subtitle">Unlock amazing rewards with crate keys</p>
+        </div>
+    </section>
+
+    <!-- Keys Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Packages</h2>
+            <div class="products-grid">
+                <!-- Common Key -->
+                <div class="product-card scroll-animate" onclick="selectProduct(this)">
+                    <div class="product-image" style="background: linear-gradient(135deg, #808080, #a9a9a9);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Common Key (x5)</h3>
+                        <p class="product-description">
+                            • 5 Common Crate Keys<br>
+                            • Chance for rare items<br>
+                            • Perfect for starters<br>
+                            • Instant delivery
+                        </p>
+                        <div class="product-price">৳ 100</div>
+                        <a href="payment.html?product=Common Key (x5)&price=100" class="btn btn-primary">Purchase</a>
+                    </div>
+                </div>
+
+                <!-- Rare Key -->
+                <div class="product-card scroll-animate" onclick="selectProduct(this)">
+                    <div class="product-image" style="background: linear-gradient(135deg, #007bff, #0056b3);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Rare Key (x5)</h3>
+                        <p class="product-description">
+                            • 5 Rare Crate Keys<br>
+                            • Higher chance for epics<br>
+                            • Great value<br>
+                            • Instant delivery
+                        </p>
+                        <div class="product-price">৳ 250</div>
+                        <a href="payment.html?product=Rare Key (x5)&price=250" class="btn btn-primary">Purchase</a>
+                    </div>
+                </div>
+
+                <!-- Epic Key -->
+                <div class="product-card scroll-animate" onclick="selectProduct(this)">
+                    <div class="product-image" style="background: linear-gradient(135deg, #6f42c1, #4a2d8c);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Epic Key (x5)</h3>
+                        <p class="product-description">
+                            • 5 Epic Crate Keys<br>
+                            • Chance for legendary items<br>
+                            • Premium rewards<br>
+                            • Instant delivery
+                        </p>
+                        <div class="product-price">৳ 500</div>
+                        <a href="payment.html?product=Epic Key (x5)&price=500" class="btn btn-primary">Purchase</a>
+                    </div>
+                </div>
+
+                <!-- Legendary Key -->
+                <div class="product-card scroll-animate" onclick="selectProduct(this)">
+                    <div class="product-image" style="background: linear-gradient(135deg, #ffc107, #fd7e14);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Legendary Key (x3)</h3>
+                        <p class="product-description">
+                            • 3 Legendary Crate Keys<br>
+                            • Guaranteed epic items<br>
+                            • High legendary chance<br>
+                            • Instant delivery
+                        </p>
+                        <div class="product-price">৳ 750</div>
+                        <a href="payment.html?product=Legendary Key (x3)&price=750" class="btn btn-primary">Purchase</a>
+                    </div>
+                </div>
+
+                <!-- Mythical Key -->
+                <div class="product-card scroll-animate" onclick="selectProduct(this)">
+                    <div class="product-image" style="background: linear-gradient(135deg, #e83e8c, #dc3545);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mythical Key (x3)</h3>
+                        <p class="product-description">
+                            • 3 Mythical Crate Keys<br>
+                            • Guaranteed legendary<br>
+                            • Exclusive cosmetics<br>
+                            • Instant delivery
+                        </p>
+                        <div class="product-price">৳ 1200</div>
+                        <a href="payment.html?product=Mythical Key (x3)&price=1200" class="btn btn-primary">Purchase</a>
+                    </div>
+                </div>
+
+                <!-- Ultimate Key Bundle -->
+                <div class="product-card scroll-animate" onclick="selectProduct(this)">
+                    <div class="product-image" style="background: linear-gradient(135deg, #20c997, #198754);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ultimate Key Bundle</h3>
+                        <p class="product-description">
+                            • 10 Keys of each type<br>
+                            • Best value package<br>
+                            • All crate types<br>
+                            • Instant delivery
+                        </p>
+                        <div class="product-price">৳ 2500</div>
+                        <a href="payment.html?product=Ultimate Key Bundle&price=2500" class="btn btn-primary">Purchase</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IRON CLOUD MC</h3>
+                    <p>The ultimate Minecraft experience since 2019. Join our community today!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="keys.html">Crate Keys</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="mailto:ironcloudmc@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 IRON CLOUD MC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function selectProduct(card) {
+            document.querySelectorAll('.product-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+        }
+    </script>
+</body>
+</html>

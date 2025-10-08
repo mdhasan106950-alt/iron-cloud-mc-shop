@@ -1,0 +1,22 @@
+iron-cloud-mc-store/
+├── index.html
+├── store.html
+├── ranks.html
+├── coins.html
+├── keys.html
+├── support.html
+├── about.html
+├── team.html
+├── payment.html
+├── css/
+│   ├── style.css
+│   └── animations.css
+├── js/
+│   ├── main.js
+│   └── store.js
+├── images/
+│   ├── logo.png (add your logo)
+│   ├── background.jpg (add background image)
+│   ├── server-preview.jpg
+│   └── server-community.jpg
+└── README.md
