@@ -1,180 +1,220 @@
-// Enhanced Main JavaScript with smooth transitions
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
+/* ============================================================
+   IRON CLOUD MC — main
+   Mobile nav, scroll reveals, tagline reveal, counters, copy
+   ============================================================ */
+(() => {
+    'use strict';
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Mobile menu ---------- */
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.mobile-menu');
+
+    if (toggle && menu) {
+        const links = Array.from(menu.querySelectorAll('a'));
+        // Stagger link entrance: each item 60ms after the previous, cap 400ms
+        const step = links.length > 7 ? 50 : 60;
+        links.forEach((link, i) => {
+            link.style.transitionDelay = `${Math.min(i * step, 400)}ms`;
+        });
+
+        let delayTimer = null;
+        const setMenu = (open) => {
+            toggle.classList.toggle('open', open);
+            menu.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            toggle.setAttribute('aria-pressed', String(open));
+            menu.setAttribute('aria-hidden', String(!open));
+            if ('inert' in menu) menu.inert = !open;
+            document.body.style.overflow = open ? 'hidden' : '';
+            clearTimeout(delayTimer);
+            if (open) {
+                // Clear the entrance delay once the sequence finishes so hover stays snappy
+                delayTimer = setTimeout(() => {
+                    links.forEach((link) => { link.style.transitionDelay = ''; });
+                }, 500);
+            }
+        };
+
+        toggle.addEventListener('click', () => {
+            setMenu(!menu.classList.contains('open'));
+        });
+
+        links.forEach((link) => link.addEventListener('click', () => setMenu(false)));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menu.classList.contains('open')) {
+                setMenu(false);
+                toggle.focus();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!toggle.contains(e.target) && !menu.contains(e.target) && menu.classList.contains('open')) {
+                setMenu(false);
+            }
         });
     }
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        });
-    });
-    
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+
+    /* ---------- Toast ---------- */
+    let toastTimer = null;
+    window.showToast = (message, type = 'success') => {
+        let toast = document.querySelector('.toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.setAttribute('role', 'status');
+            toast.setAttribute('aria-live', 'polite');
+            toast.innerHTML = '<i class="ph ph-check"></i><span></span>';
+            document.body.appendChild(toast);
         }
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+        const icon = toast.querySelector('.ph');
+        toast.classList.toggle('error', type === 'error');
+        icon.className = `ph ph-${type === 'error' ? 'x' : 'check'}`;
+        icon.style.color = type === 'error' ? 'var(--danger)' : '';
+        toast.querySelector('span').textContent = message;
+        toast.classList.add('visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('visible'), 3400);
+    };
+
+    /* ---------- Clipboard (data-copy) ---------- */
+    const copyText = (text) => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(text);
+        }
+        return new Promise((resolve, reject) => {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy') ? resolve() : reject(new Error('copy failed'));
+            } catch (err) {
+                reject(err);
+            } finally {
+                document.body.removeChild(ta);
+            }
+        });
+    };
+
+    document.querySelectorAll('[data-copy]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const value = btn.getAttribute('data-copy');
+            const copyBtn = btn;
+            const original = copyBtn.innerHTML;
+            copyText(value)
+                .then(() => {
+                    copyBtn.innerHTML = '<i class="ph ph-check"></i> Copied to clipboard';
+                    window.showToast(`Copied ${value}`);
+                    setTimeout(() => {
+                        copyBtn.innerHTML = original;
+                    }, 2400);
+                })
+                .catch(() => {
+                    window.showToast('Copy failed — copy the IP below', 'error');
                 });
-            }
         });
     });
-    
-    // Scroll animations
-    const scrollElements = document.querySelectorAll('.scroll-animate');
-    
-    const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-        );
-    };
-    
-    const displayScrollElement = (element) => {
-        element.classList.add('animated');
-    };
-    
-    const hideScrollElement = (element) => {
-        element.classList.remove('animated');
-    };
-    
-    const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-            if (elementInView(el, 1.2)) {
-                displayScrollElement(el);
-            }
-        });
-    };
-    
-    // Staggered animations for grid items
-    const staggerElements = document.querySelectorAll('.stagger-item');
-    const handleStaggerAnimation = () => {
-        staggerElements.forEach((el, index) => {
-            if (elementInView(el, 1.1)) {
-                setTimeout(() => {
-                    displayScrollElement(el);
-                }, index * 100);
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', () => {
-        handleScrollAnimation();
-        handleStaggerAnimation();
-    });
-    
-    // Initialize animations on page load
-    handleScrollAnimation();
-    handleStaggerAnimation();
-    
-    // Add scroll-animate class to elements that should animate on scroll
-    document.querySelectorAll('.feature-card, .info-text, .info-image, .team-card, .support-card, .product-card, .about-text').forEach(el => {
-        el.classList.add('scroll-animate');
-    });
-    
-    // Add stagger-item class to grid items for staggered animation
-    document.querySelectorAll('.features-grid .feature-card, .products-grid .product-card, .team-grid .team-card, .support-options .support-card').forEach((el, index) => {
-        el.classList.add('stagger-item');
-        el.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Page transition effect
-    const pageTransition = document.createElement('div');
-    pageTransition.className = 'page-transition';
-    pageTransition.innerHTML = '<div class="loading-spinner"></div>';
-    document.body.appendChild(pageTransition);
-    
-    // Handle page transitions
-    document.querySelectorAll('a').forEach(link => {
-        if (link.href && link.href.includes('.html') && !link.href.includes('#')) {
-            link.addEventListener('click', function(e) {
-                if (this.target === '_blank' || this.hasAttribute('download')) return;
-                
-                e.preventDefault();
-                const href = this.href;
-                
-                pageTransition.classList.add('active');
-                
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 600);
+
+    /* ---------- Scroll reveals (once) ---------- */
+    const revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+        revealTargets.forEach((el) => el.classList.add('is-visible'));
+    } else {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
             });
-        }
-    });
-    
-    // Remove transition when page loads
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            pageTransition.classList.remove('active');
-        }, 300);
-    });
-    
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-    
-    // Add hover effects to buttons
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.classList.add('btn-animate');
-    });
-    
-    // Counter animation for statistics
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    
-    const animateCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
-        
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(() => animateCounter(counter), 1);
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+        revealTargets.forEach((el) => revealObserver.observe(el));
+    }
+
+    /* ---------- Tagline reveal (word by word, B11) ---------- */
+    const tagline = document.querySelector('.tagline-inner');
+    if (tagline) {
+        // Split text into words (preserve spacing and markup)
+        const words = tagline.textContent.trim().split(/\s+/);
+        tagline.innerHTML = words
+            .map((w) => `<span class="word">${w}</span>`)
+            .join(' ');
+        const wordEls = Array.from(tagline.querySelectorAll('.word'));
+
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+            wordEls.forEach((w) => w.classList.add('is-on'));
         } else {
-            counter.innerText = target;
+            const wordObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-on');
+                        wordObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Words activate one at a time as they cross the trigger line
+                threshold: 0.9,
+                rootMargin: '-30% 0px -45% 0px',
+            });
+            wordEls.forEach((w) => wordObserver.observe(w));
         }
+    }
+
+    /* ---------- Counters ---------- */
+    const counters = document.querySelectorAll('.counter');
+    const setCounter = (el, target) => {
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = prefix + target + suffix;
     };
-    
-    // Initialize counters when they come into view
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-            }
+
+    const animateCounter = (el) => {
+        const target = parseFloat(el.getAttribute('data-target')) || 0;
+        const startTime = performance.now();
+        const duration = 1100;
+        const step = (now) => {
+            const t = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const value = Math.round(target * eased);
+            setCounter(el, value);
+            if (t < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    };
+
+    if (counters.length) {
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+            counters.forEach((el) => setCounter(el, parseFloat(el.getAttribute('data-target')) || 0));
+        } else {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.6 });
+            counters.forEach((el) => counterObserver.observe(el));
+        }
+    }
+
+    /* ---------- FAQ accordion (one open at a time) ---------- */
+    document.querySelectorAll('.faq-group').forEach((group) => {
+        const items = Array.from(group.querySelectorAll('details'));
+        items.forEach((item) => {
+            item.addEventListener('toggle', () => {
+                if (item.open) {
+                    items.forEach((other) => {
+                        if (other !== item && other.open) other.open = false;
+                    });
+                }
+            });
         });
-    }, { threshold: 0.5 });
-    
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
     });
-});
+})();

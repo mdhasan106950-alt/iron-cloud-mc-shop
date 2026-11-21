@@ -3,198 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crate Keys - IRON CLOUD MC</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Crate Keys — IRON CLOUD MC</title>
+    <meta name="description" content="Crate key packages for the IRON CLOUD MC Minecraft server. Common through Mythical.">
+    <meta name="theme-color" content="#181818">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta property="og:title" content="Crate Keys — IRON CLOUD MC">
+    <meta property="og:description" content="Crate key packages for the IRON CLOUD MC Minecraft server. Common through Mythical.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IRON CLOUD MC">
+        <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="nav-logo">
-                <img src="images/logo.png" alt="IRON CLOUD MC">
+            <a class="nav-logo" href="index.html" aria-label="IRON CLOUD MC home">
+                <img src="images/logo.png" alt="" width="32" height="32">
                 <span>IRON CLOUD MC</span>
-            </div>
+            </a>
             <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="store.html" class="nav-link">Store</a>
-                <a href="keys.html" class="nav-link active">Crate Keys</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="team.html" class="nav-link">Team</a>
-                <a href="support.html" class="nav-link">Support</a>
+                        <a href="index.html">Home</a>
+                        <a href="store.html">Store</a>
+                        <a href="ranks.html">Ranks</a>
+                        <a href="coins.html">Coins</a>
+                        <a href="keys.html" class="active" aria-current="page">Keys</a>
+                        <a href="about.html">About</a>
+                        <a href="team.html">Team</a>
+                        <a href="support.html">Support</a>
             </div>
-            <div class="nav-toggle">
+            <button class="btn btn-primary btn-sm nav-cta" data-copy="play.ironcloudmc.fun" aria-label="Copy server IP">
+                <i class="ph ph-copy"></i> Join the server
+            </button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Keys Header -->
-    <section class="hero" style="height: 40vh; min-height: 300px;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Crate Keys</h1>
-            <p class="hero-subtitle">Unlock amazing rewards with crate keys</p>
-        </div>
-    </section>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <a href="index.html"><span class="caption-4">Home</span><i class="ph ph-house"></i></a>
+        <a href="store.html"><span class="caption-4">Store</span><i class="ph ph-storefront"></i></a>
+        <a href="ranks.html"><span class="caption-4">Ranks</span><i class="ph ph-crown"></i></a>
+        <a href="coins.html"><span class="caption-4">Coins</span><i class="ph ph-coins"></i></a>
+        <a href="keys.html"><span class="caption-4">Crate Keys</span><i class="ph ph-key"></i></a>
+        <a href="about.html"><span class="caption-4">About</span><i class="ph ph-info"></i></a>
+        <a href="team.html"><span class="caption-4">Team</span><i class="ph ph-users"></i></a>
+        <a href="support.html"><span class="caption-4">Support</span><i class="ph ph-headset"></i></a>
+    </div>
+    <main id="main">
 
-    <!-- Keys Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Key Packages</h2>
-            <div class="products-grid">
-                <!-- Common Key -->
-                <div class="product-card scroll-animate" onclick="selectProduct(this)">
-                    <div class="product-image" style="background: linear-gradient(135deg, #808080, #a9a9a9);">
-                        <i class="fas fa-key"></i>
+        <section class="page-hero">
+            <div class="container">
+                <p class="chip reveal"><i class="ph ph-key"></i> Store</p>
+                <h1 class="heading-2 reveal">Crate Keys</h1>
+                <p class="page-hero-sub reveal">Unlock amazing rewards with crate keys. Common through Mythical.</p>
+            </div>
+        </section>
+        <section aria-label="Key packages">
+            <div class="container">
+                <div class="products-grid reveal-stagger">
+
+                <article class="product-card reveal" data-product="Common Key (x5)" data-price="100">
+                    <div class="product-image">
+                        <i class="ph ph-key" style="color:#a9a9a9;"></i>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Common Key (x5)</h3>
-                        <p class="product-description">
-                            • 5 Common Crate Keys<br>
-                            • Chance for rare items<br>
-                            • Perfect for starters<br>
-                            • Instant delivery
-                        </p>
+                        <ul class="product-description">
+                            <li>5 Common crate keys</li>
+                            <li>Chance for rare items</li>
+                            <li>Perfect for starters</li>
+                            <li>Instant delivery</li>
+                        </ul>
                         <div class="product-price">৳ 100</div>
-                        <a href="payment.html?product=Common Key (x5)&price=100" class="btn btn-primary">Purchase</a>
+                        <a href="payment.html?product=Common+Key+%28x5%29&price=100" class="btn btn-primary btn-sm">Purchase</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Rare Key -->
-                <div class="product-card scroll-animate" onclick="selectProduct(this)">
-                    <div class="product-image" style="background: linear-gradient(135deg, #007bff, #0056b3);">
-                        <i class="fas fa-key"></i>
+                <article class="product-card reveal" data-product="Rare Key (x5)" data-price="250">
+                    <div class="product-image">
+                        <i class="ph ph-key" style="color:#3b82f6;"></i>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Rare Key (x5)</h3>
-                        <p class="product-description">
-                            • 5 Rare Crate Keys<br>
-                            • Higher chance for epics<br>
-                            • Great value<br>
-                            • Instant delivery
-                        </p>
+                        <ul class="product-description">
+                            <li>5 Rare crate keys</li>
+                            <li>Higher chance for epics</li>
+                            <li>Great value</li>
+                            <li>Instant delivery</li>
+                        </ul>
                         <div class="product-price">৳ 250</div>
-                        <a href="payment.html?product=Rare Key (x5)&price=250" class="btn btn-primary">Purchase</a>
+                        <a href="payment.html?product=Rare+Key+%28x5%29&price=250" class="btn btn-primary btn-sm">Purchase</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Epic Key -->
-                <div class="product-card scroll-animate" onclick="selectProduct(this)">
-                    <div class="product-image" style="background: linear-gradient(135deg, #6f42c1, #4a2d8c);">
-                        <i class="fas fa-key"></i>
+                <article class="product-card reveal" data-product="Epic Key (x5)" data-price="500">
+                    <div class="product-image">
+                        <i class="ph ph-key" style="color:#a78bfa;"></i>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Epic Key (x5)</h3>
-                        <p class="product-description">
-                            • 5 Epic Crate Keys<br>
-                            • Chance for legendary items<br>
-                            • Premium rewards<br>
-                            • Instant delivery
-                        </p>
+                        <ul class="product-description">
+                            <li>5 Epic crate keys</li>
+                            <li>Chance for legendary items</li>
+                            <li>Premium rewards</li>
+                            <li>Instant delivery</li>
+                        </ul>
                         <div class="product-price">৳ 500</div>
-                        <a href="payment.html?product=Epic Key (x5)&price=500" class="btn btn-primary">Purchase</a>
+                        <a href="payment.html?product=Epic+Key+%28x5%29&price=500" class="btn btn-primary btn-sm">Purchase</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Legendary Key -->
-                <div class="product-card scroll-animate" onclick="selectProduct(this)">
-                    <div class="product-image" style="background: linear-gradient(135deg, #ffc107, #fd7e14);">
-                        <i class="fas fa-key"></i>
+                <article class="product-card reveal" data-product="Legendary Key (x3)" data-price="750">
+                    <div class="product-image">
+                        <i class="ph ph-key" style="color:#fbbf24;"></i>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Legendary Key (x3)</h3>
-                        <p class="product-description">
-                            • 3 Legendary Crate Keys<br>
-                            • Guaranteed epic items<br>
-                            • High legendary chance<br>
-                            • Instant delivery
-                        </p>
+                        <ul class="product-description">
+                            <li>3 Legendary crate keys</li>
+                            <li>Guaranteed epic items</li>
+                            <li>High legendary chance</li>
+                            <li>Instant delivery</li>
+                        </ul>
                         <div class="product-price">৳ 750</div>
-                        <a href="payment.html?product=Legendary Key (x3)&price=750" class="btn btn-primary">Purchase</a>
+                        <a href="payment.html?product=Legendary+Key+%28x3%29&price=750" class="btn btn-primary btn-sm">Purchase</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Mythical Key -->
-                <div class="product-card scroll-animate" onclick="selectProduct(this)">
-                    <div class="product-image" style="background: linear-gradient(135deg, #e83e8c, #dc3545);">
-                        <i class="fas fa-key"></i>
+                <article class="product-card reveal" data-product="Mythical Key (x3)" data-price="1200">
+                    <div class="product-image">
+                        <i class="ph ph-key" style="color:#f472b6;"></i>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Mythical Key (x3)</h3>
-                        <p class="product-description">
-                            • 3 Mythical Crate Keys<br>
-                            • Guaranteed legendary<br>
-                            • Exclusive cosmetics<br>
-                            • Instant delivery
-                        </p>
+                        <ul class="product-description">
+                            <li>3 Mythical crate keys</li>
+                            <li>Guaranteed legendary</li>
+                            <li>Exclusive cosmetics</li>
+                            <li>Instant delivery</li>
+                        </ul>
                         <div class="product-price">৳ 1200</div>
-                        <a href="payment.html?product=Mythical Key (x3)&price=1200" class="btn btn-primary">Purchase</a>
+                        <a href="payment.html?product=Mythical+Key+%28x3%29&price=1200" class="btn btn-primary btn-sm">Purchase</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Ultimate Key Bundle -->
-                <div class="product-card scroll-animate" onclick="selectProduct(this)">
-                    <div class="product-image" style="background: linear-gradient(135deg, #20c997, #198754);">
-                        <i class="fas fa-key"></i>
+                <article class="product-card reveal" data-product="Ultimate Key Bundle" data-price="2500">
+                    <div class="product-image">
+                        <i class="ph ph-key" style="color:#34d399;"></i>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Ultimate Key Bundle</h3>
-                        <p class="product-description">
-                            • 10 Keys of each type<br>
-                            • Best value package<br>
-                            • All crate types<br>
-                            • Instant delivery
-                        </p>
+                        <ul class="product-description">
+                            <li>10 keys of each type</li>
+                            <li>Best value package</li>
+                            <li>All crate types</li>
+                            <li>Instant delivery</li>
+                        </ul>
                         <div class="product-price">৳ 2500</div>
-                        <a href="payment.html?product=Ultimate Key Bundle&price=2500" class="btn btn-primary">Purchase</a>
+                        <a href="payment.html?product=Ultimate+Key+Bundle&price=2500" class="btn btn-primary btn-sm">Purchase</a>
                     </div>
+                </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>IRON CLOUD MC</h3>
-                    <p>The ultimate Minecraft experience since 2019. Join our community today!</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="nav-logo" href="index.html" aria-label="IRON CLOUD MC home">
+                        <img src="images/logo.png" alt="" width="32" height="32">
+                        <span>IRON CLOUD MC</span>
+                    </a>
+                    <p>The Minecraft server with a community that pulls its weight. Java and Bedrock, free to join, together since 2019.</p>
+                    <div class="status-row"><span class="dot"></span> Server online</div>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store.html">Store</a></li>
-                        <li><a href="keys.html">Crate Keys</a></li>
-                        <li><a href="support.html">Support</a></li>
+                        <li><a href="index.html"><i class="ph ph-house"></i> Home</a></li>
+                        <li><a href="store.html"><i class="ph ph-storefront"></i> Store</a></li>
+                        <li><a href="ranks.html"><i class="ph ph-crown"></i> Ranks</a></li>
+                        <li><a href="coins.html"><i class="ph ph-coins"></i> Coins</a></li>
+                        <li><a href="keys.html"><i class="ph ph-key"></i> Crate Keys</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html"><i class="ph ph-info"></i> About Us</a></li>
+                        <li><a href="team.html"><i class="ph ph-users"></i> Team</a></li>
+                        <li><a href="support.html"><i class="ph ph-headset"></i> Support</a></li>
+                        <li><a href="payment.html"><i class="ph ph-wallet"></i> Payment</a></li>
+                    </ul>
+                </div>
+                <div>
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a href="mailto:ironcloudmc@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank" rel="noopener" title="Join our Discord" aria-label="Join our Discord"><i class="ph ph-discord-logo"></i></a>
+                        <a href="mailto:ironcloudmc@gmail.com" title="Email us" aria-label="Email us"><i class="ph ph-envelope"></i></a>
+                        <a href="tel:01821925430" title="Call us" aria-label="Call us"><i class="ph ph-phone"></i></a>
                     </div>
+                    <ul>
+                        <li><a href="privacy.html"><i class="ph ph-receipt"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="ph ph-receipt"></i> Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2020 IRON CLOUD MC. All rights reserved.</p>
+                <p>© 2026 IRON CLOUD MC. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
-    <script>
-        function selectProduct(card) {
-            document.querySelectorAll('.product-card').forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-        }
-    </script>
+    <script src="js/store.js"></script>    <script src="js/main.js"></script>
 </body>
 </html>

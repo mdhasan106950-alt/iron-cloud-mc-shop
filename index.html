@@ -3,327 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON CLOUD MC - Premium Minecraft Server</title>
-    <meta name="description" content="Join IRON CLOUD MC - The ultimate Minecraft experience since 2019. Featuring custom ranks, exclusive cosmetics, and an amazing community.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>IRON CLOUD MC — The Minecraft Server with a Community</title>
+    <meta name="description" content="IRON CLOUD MC is a Java and Bedrock Minecraft server. Survival, Skyblock, Factions, and PvP Arena — free to join since 2019.">
+    <meta name="theme-color" content="#181818">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta property="og:title" content="IRON CLOUD MC — The Minecraft Server with a Community">
+    <meta property="og:description" content="Java and Bedrock Minecraft server. Survival, Skyblock, Factions, and PvP Arena — free to join since 2019.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IRON CLOUD MC">
+    <meta property="og:image" content="images/hero-art.png">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <!-- Page Transition -->
-    <div class="page-transition">
-        <div class="loading-spinner"></div>
-    </div>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="IRON CLOUD MC">
+            <a class="nav-logo" href="index.html" aria-label="IRON CLOUD MC home">
+                <img src="images/logo.png" alt="" width="32" height="32">
                 <span>IRON CLOUD MC</span>
             </a>
             <div class="nav-menu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="store.html" class="nav-link">Store</a>
-                <a href="ranks.html" class="nav-link">Ranks</a>
-                <a href="coins.html" class="nav-link">Coins</a>
-                <a href="keys.html" class="nav-link">Keys</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="team.html" class="nav-link">Team</a>
-                <a href="support.html" class="nav-link">Support</a>
+                <a href="index.html" class="active" aria-current="page">Home</a>
+                <a href="store.html">Store</a>
+                <a href="ranks.html">Ranks</a>
+                <a href="coins.html">Coins</a>
+                <a href="keys.html">Keys</a>
+                <a href="about.html">About</a>
+                <a href="team.html">Team</a>
+                <a href="support.html">Support</a>
             </div>
-            <div class="nav-toggle">
+            <button class="btn btn-primary btn-sm nav-cta" data-copy="play.ironcloudmc.fun" aria-label="Copy server IP">
+                <i class="ph ph-copy"></i> Join the server
+            </button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in-down">IRON CLOUD MC</h1>
-            <p class="hero-subtitle animate-fade-in-delay">Experience Minecraft Like Never Before</p>
-            <p class="server-ip animate-fade-in-delay-2">play.ironcloudmc.fun</p>
-            <div class="hero-buttons animate-fade-in-delay-3">
-                <a href="store.html" class="btn btn-primary">
-                    <i class="fas fa-shopping-cart"></i>
-                    Visit Store
-                </a>
-                <a href="about.html" class="btn btn-secondary">
-                    <i class="fas fa-info-circle"></i>
-                    Learn More
-                </a>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator animate-fade-in-delay-3">
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </section>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <a href="index.html">Home<i class="ph ph-house"></i></a>
+        <a href="store.html">Store<i class="ph ph-storefront"></i></a>
+        <a href="ranks.html">Ranks<i class="ph ph-crown"></i></a>
+        <a href="coins.html">Coins<i class="ph ph-coins"></i></a>
+        <a href="keys.html">Crate Keys<i class="ph ph-key"></i></a>
+        <a href="about.html">About<i class="ph ph-info"></i></a>
+        <a href="team.html">Team<i class="ph ph-users"></i></a>
+        <a href="support.html">Support<i class="ph ph-headset"></i></a>
+    </div>
 
-    <!-- Statistics Section -->
-    <section class="features" style="padding: 60px 0; background: var(--primary);">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item scroll-animate">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="200">0</h3>
-                        <p>Active Players</p>
-                    </div>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <div class="stat-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="5">0</h3>
-                        <p>Years Running</p>
-                    </div>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <div class="stat-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="10">0</h3>
-                        <p>Game Modes</p>
-                    </div>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <div class="stat-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="40">0</h3>
-                        <p>Custom Plugins</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main id="main">
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title scroll-animate">Why Choose IRON CLOUD MC?</h2>
-            <p class="section-subtitle scroll-animate" style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary); font-size: 1.2rem;">
-                Discover what makes our server the ultimate Minecraft destination
-            </p>
-            <div class="features-grid">
-                <div class="feature-card stagger-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-crown"></i>
+        <!-- ============ HERO ============ -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <p class="chip hero-status hero-anim d1"><span class="dot"></span> Java &amp; Bedrock · online now</p>
+                <h1 id="hero-heading" class="heading-1 hero-title hero-anim d2">Play Minecraft with a community<br>that feels at home</h1>
+                <p class="hero-sub hero-anim d3">IRON CLOUD MC is a cross-platform Minecraft server with real staff, fair gameplay, and distinct modes for every kind of player. Free to join, together since 2019.</p>
+                <div class="hero-actions hero-anim d4">
+                    <button class="btn btn-primary" data-copy="play.ironcloudmc.fun" aria-label="Copy server IP to clipboard">
+                        <i class="ph ph-copy"></i> Join the server
+                    </button>
+                    <div class="server-ip">
+                        <span class="caption-4">Server IP</span>
+                        <code class="mono">play.ironcloudmc.fun</code>
                     </div>
-                    <h3>Premium Ranking System</h3>
-                    <p>Unlock exclusive abilities and perks with our carefully designed rank system. From Hero to IMMORTAL, each rank offers unique benefits and cosmetics.</p>
                 </div>
-                <div class="feature-card stagger-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>In-Game Economy</h3>
-                    <p>Purchase coins to buy special items, cosmetics, and upgrades. Our balanced economy ensures fair gameplay for everyone.</p>
-                </div>
-                <div class="feature-card stagger-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <h3>Mystery Crates</h3>
-                    <p>Open crates for rare items and exclusive rewards. With multiple crate types, there's always something exciting to discover.</p>
-                </div>
-                <div class="feature-card stagger-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Our dedicated team is always ready to help you with any issues. Fast response times and professional assistance guaranteed.</p>
-                </div>
-                <div class="feature-card stagger-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h3>Cross-Platform</h3>
-                    <p>Play with friends regardless of their platform. We support both Java and Bedrock editions seamlessly.</p>
-                </div>
-                <div class="feature-card stagger-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Regular Updates</h3>
-                    <p>We constantly add new content, features, and improvements to keep your gaming experience fresh and exciting.</p>
-                </div>
+                <p class="hero-proof hero-anim d5">Playing together since 2019 <span class="sep">·</span> ~200 players online <span class="sep">·</span> 4 game modes</p>
+                <img class="hero-art reveal" src="images/hero-art.png" alt="A floating Minecraft island at night with violet crystal, a lantern-lit cottage, and a stone bridge" width="1376" height="768">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Server Info Section -->
-    <section class="server-info">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-text scroll-animate">
-                    <h2>Server Information</h2>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
-                        Get all the details about our server setup and compatibility
-                    </p>
-                    <ul class="info-list">
-                        <li><i class="fas fa-check"></i> <strong>Version Support:</strong> 1.8 - 1.21.8 (Latest)</li>
-                        <li><i class="fas fa-check"></i> <strong>Platform:</strong> Java & Bedrock Edition</li>
-                        <li><i class="fas fa-check"></i> <strong>Uptime:</strong> 99.9% Guaranteed</li>
-                        <li><i class="fas fa-check"></i> <strong>Community:</strong> 10,000+ Active Players</li>
-                        <li><i class="fas fa-check"></i> <strong>Location:</strong> Global Data Centers</li>
-                        <li><i class="fas fa-check"></i> <strong>Performance:</strong> High-End Hardware</li>
-                    </ul>
-                    <div class="info-buttons" style="margin-top: 2rem;">
-                        <a href="about.html" class="btn btn-primary">
-                            <i class="fas fa-history"></i>
-                            Server History
-                        </a>
+        <!-- ============ STATS ============ -->
+        <section class="stats-band" aria-label="Server statistics">
+            <div class="container">
+                <div class="stats-grid reveal-stagger">
+                    <div class="stat">
+                        <div class="stat-icon"><i class="ph ph-users"></i></div>
+                        <div class="stat-value counter" data-target="200" data-prefix="~">~0</div>
+                        <div class="stat-label">Players online now</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"><i class="ph ph-calendar"></i></div>
+                        <div class="stat-value">2019</div>
+                        <div class="stat-label">Server founded</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"><i class="ph ph-game-controller"></i></div>
+                        <div class="stat-value counter" data-target="4">0</div>
+                        <div class="stat-label">Game modes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"><i class="ph ph-wrench"></i></div>
+                        <div class="stat-value counter" data-target="40" data-prefix="~">~0</div>
+                        <div class="stat-label">Custom plugins</div>
                     </div>
                 </div>
-                <div class="info-image scroll-animate">
-                    <img src="images/server-preview.jpg" alt="IRON CLOUD MC Server Preview">
-                    <div class="image-overlay">
-                        <div class="overlay-content">
-                            <h3>Join Now</h3>
-                            <p>play.ironcloudmc.fun</p>
+                <p class="stats-note">Approximate figures. We do not have a public analytics feed yet.</p>
+            </div>
+        </section>
+
+        <!-- ============ TAGLINE REVEAL ============ -->
+        <section class="tagline" aria-label="Tagline">
+            <div class="tagline-inner">Minecraft is a game about building. Home is about belonging.</div>
+        </section>
+
+        <!-- ============ BENEFITS ============ -->
+        <section class="benefits" aria-labelledby="benefits-heading">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <h2 id="benefits-heading" class="heading-2">Why players choose IRON CLOUD MC</h2>
+                    <p class="body-2">Outcomes, not features. What we do and what it means for the way you play.</p>
+                </div>
+                <div class="benefits-grid reveal-stagger">
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="ph ph-users"></i></div>
+                        <div>
+                            <h3>Belong to a real community</h3>
+                            <p>~200 players online at any moment, staffed by real people who answer quickly.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="ph ph-globe"></i></div>
+                        <div>
+                            <h3>Play on either edition</h3>
+                            <p>Java and Bedrock on one server, so your friends are never locked out of the session.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="ph ph-trophy"></i></div>
+                        <div>
+                            <h3>More than survival</h3>
+                            <p>Survival, Skyblock, Factions, and PvP Arena, each tuned for a different kind of session.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="ph ph-crown"></i></div>
+                        <div>
+                            <h3>Ranks with real value</h3>
+                            <p>Hero, Lion, King, Legend, MASTER, IMMORTAL. /fly, homes, tags, cosmetics, real perks.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card wide">
+                        <div class="benefit-icon"><i class="ph ph-shield-check"></i></div>
+                        <div>
+                            <h3>Fair gameplay every time</h3>
+                            <p>Moderated PvP, strict rules against cheating, an economy with no favoritism, and staff who respond fast.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Game Modes Section -->
-    <section class="features" style="background: var(--secondary);">
-        <div class="container">
-            <h2 class="section-title scroll-animate">Popular Game Modes</h2>
-            <p class="section-subtitle scroll-animate" style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary); font-size: 1.2rem;">
-                Explore our diverse range of gameplay experiences
-            </p>
-            <div class="game-modes-grid">
-                <div class="game-mode-card scroll-animate">
-                    <div class="game-mode-icon">
-                        <i class="fas fa-fist-raised"></i>
-                    </div>
-                    <h3>Survival</h3>
-                    <p>Classic survival experience with enhanced features and custom mobs.</p>
+        <!-- ============ HOW IT WORKS ============ -->
+        <section aria-labelledby="how-heading">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <h2 id="how-heading" class="heading-2">How it works</h2>
+                    <p class="body-2">Three steps. No account, no app install. Just play.</p>
                 </div>
-                <div class="game-mode-card scroll-animate">
-                    <div class="game-mode-icon">
-                        <i class="fas fa-gem"></i>
+                <div class="steps-grid reveal-stagger">
+                    <div class="step">
+                        <div class="step-num">01</div>
+                        <h3>Copy the IP</h3>
+                        <p>Add <span class="mono" style="color: var(--accent-text);">play.ironcloudmc.fun</span> in Minecraft. Joining is free.</p>
                     </div>
-                    <h3>Skyblock</h3>
-                    <p>Start with nothing but a small island and build your empire in the sky.</p>
-                </div>
-                <div class="game-mode-card scroll-animate">
-                    <div class="game-mode-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="step">
+                        <div class="step-num">02</div>
+                        <h3>Pick your mode</h3>
+                        <p>Survival, Skyblock, Factions, or PvP Arena. Switch whenever you want.</p>
                     </div>
-                    <h3>Factions</h3>
-                    <p>Form alliances, build bases, and conquer territories with your faction.</p>
-                </div>
-                <div class="game-mode-card scroll-animate">
-                    <div class="game-mode-icon">
-                        <i class="fas fa-crosshairs"></i>
+                    <div class="step">
+                        <div class="step-num">03</div>
+                        <h3>Unlock the good stuff</h3>
+                        <p>Ranks, coins, and crate keys from the store, delivered after payment verification.</p>
                     </div>
-                    <h3>PvP Arena</h3>
-                    <p>Test your skills against other players in our custom PvP arenas.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="hero" style="height: 60vh; min-height: 400px;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2 class="hero-title animate-fade-in">Ready to Join?</h2>
-            <p class="hero-subtitle animate-fade-in-delay">Start your adventure on IRON CLOUD MC today</p>
-            <p class="server-ip animate-fade-in-delay-2">play.ironcloudmc.fun</p>
-            <div class="hero-buttons animate-fade-in-delay-3">
-                <a href="store.html" class="btn btn-primary">
-                    <i class="fas fa-shopping-cart"></i>
-                    Visit Store
-                </a>
-                <a href="support.html" class="btn btn-secondary">
-                    <i class="fas fa-question-circle"></i>
-                    Get Help
-                </a>
+        <!-- ============ SERVER INFO ============ -->
+        <section class="server-info" aria-labelledby="info-heading">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="reveal">
+                        <h2 id="info-heading" class="heading-3">Server information</h2>
+                        <p class="sub body-2">Everything about the IRON CLOUD MC setup.</p>
+                        <ul class="info-list">
+                            <li><i class="ph ph-check"></i><span><strong>Version support:</strong> 1.8 to 1.21.8 (latest)</span></li>
+                            <li><i class="ph ph-check"></i><span><strong>Platform:</strong> Java &amp; Bedrock Edition</span></li>
+                            <li><i class="ph ph-check"></i><span><strong>Access:</strong> Free to join, no account needed</span></li>
+                            <li><i class="ph ph-check"></i><span><strong>Uptime:</strong> High availability, monitored by staff</span></li>
+                            <li><i class="ph ph-check"></i><span><strong>Community:</strong> Global players, local staff</span></li>
+                        </ul>
+                        <button class="btn btn-primary" data-copy="play.ironcloudmc.fun" aria-label="Copy server IP">
+                            <i class="ph ph-copy"></i> Join Now
+                        </button>
+                    </div>
+                    <div class="info-media reveal">
+                        <img src="images/server-preview.jpg" alt="A lantern-lit cottage and pond in the IRON CLOUD MC night world" loading="lazy">
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- ============ PROOF / TEAM ============ -->
+        <section class="team-proof" aria-labelledby="team-heading">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <h2 id="team-heading" class="heading-2">Built and staffed by real players</h2>
+                    <p class="body-2">No faceless bots. The people running the server are players too.</p>
+                </div>
+                <div class="team-proof-grid reveal-stagger">
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #7c3aed;">MD</div>
+                        <h3>MR DOOM YT</h3>
+                        <p>Owner</p>
+                    </div>
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #0f766e;">SH</div>
+                        <h3>senpai-hasan</h3>
+                        <p>Lead Developer</p>
+                    </div>
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #b45309;">AL</div>
+                        <h3>alvi</h3>
+                        <p>Developer</p>
+                    </div>
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #0369a1;">AB</div>
+                        <h3>abir (ziron)</h3>
+                        <p>Administrator</p>
+                    </div>
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #0369a1;">SZ</div>
+                        <h3>SAZIM</h3>
+                        <p>Administrator</p>
+                    </div>
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #be185d;">VA</div>
+                        <h3>VAYMO</h3>
+                        <p>Moderator</p>
+                    </div>
+                    <div class="team-mini">
+                        <div class="team-avatar" style="background: #be185d;">SY</div>
+                        <h3>SAYAN</h3>
+                        <p>Moderator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FAQ ============ -->
+        <section class="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <h2 id="faq-heading" class="heading-2">Frequently asked questions</h2>
+                    <p class="body-2">Straight answers about joining, purchasing, and playing.</p>
+                </div>
+                <div class="faq-group reveal-stagger">
+                    <details class="faq-item">
+                        <summary>How do I join the server?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Add <span class="mono">play.ironcloudmc.fun</span> in Minecraft and hit Join. The server is free to join. No app or account is needed.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you support Java and Bedrock?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Yes. Both Java and Bedrock Edition players join the same server.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What versions do you support?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Versions 1.8 to the latest 1.21.8. Older versions are not supported.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do I buy ranks, coins, or crate keys?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Choose a package in the store, then complete the payment on the payment page. Ranks, coins, and keys are delivered after payment verification.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How long does delivery take?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Items are delivered after payment verification, usually within 15 minutes. If you do not receive your items, contact the Discord support team.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What payment methods do you accept?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Bkash and Nagad. International methods are coming soon.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I get a refund?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Digital purchases are generally not refunded. If you did not receive items because of a technical error, we make sure you get what you paid for.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Where can I get help?<i class="ph ph-caret-down"></i></summary>
+                        <div class="faq-body">Join the Discord community for fast help, or email <span class="mono">ironcloudmc@gmail.com</span>. Staff respond during business hours.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FINAL CTA ============ -->
+        <section class="final-cta" aria-labelledby="final-heading">
+            <div class="container reveal">
+                <h2 id="final-heading" class="heading-2">Ready to join the pack?</h2>
+                <p class="body-2">Free to join. No account. Just import the IP and go.</p>
+                <button class="btn btn-primary btn-lg" data-copy="play.ironcloudmc.fun" aria-label="Copy server IP">
+                    <i class="ph ph-copy"></i> Join the server
+                </button>
+                <p class="hero-proof" style="margin-top: var(--s-24);"><span class="mono">play.ironcloudmc.fun</span></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>IRON CLOUD MC</h3>
-                    <p>The ultimate Minecraft experience since 2019. Join our vibrant community and discover why thousands of players choose us every day.</p>
-                    <div class="server-status" style="margin-top: 1rem;">
-                        <div class="status-indicator online"></div>
-                        <span>Server Online</span>
-                    </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="nav-logo" href="index.html" aria-label="IRON CLOUD MC home">
+                        <img src="images/logo.png" alt="" width="32" height="32">
+                        <span>IRON CLOUD MC</span>
+                    </a>
+                    <p>The Minecraft server with a community that pulls its weight. Java and Bedrock, free to join, together since 2019.</p>
+                    <div class="status-row"><span class="dot"></span> Server online</div>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="store.html"><i class="fas fa-store"></i> Store</a></li>
-                        <li><a href="ranks.html"><i class="fas fa-crown"></i> Ranks</a></li>
-                        <li><a href="coins.html"><i class="fas fa-coins"></i> Coins</a></li>
-                        <li><a href="keys.html"><i class="fas fa-key"></i> Crate Keys</a></li>
+                        <li><a href="index.html"><i class="ph ph-house"></i> Home</a></li>
+                        <li><a href="store.html"><i class="ph ph-storefront"></i> Store</a></li>
+                        <li><a href="ranks.html"><i class="ph ph-crown"></i> Ranks</a></li>
+                        <li><a href="coins.html"><i class="ph ph-coins"></i> Coins</a></li>
+                        <li><a href="keys.html"><i class="ph ph-key"></i> Crate Keys</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
+                <div>
+                    <h3>Company</h3>
                     <ul>
-                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                        <li><a href="team.html"><i class="fas fa-users"></i> Our Team</a></li>
-                        <li><a href="support.html"><i class="fas fa-headset"></i> Help Center</a></li>
-                        <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment</a></li>
+                        <li><a href="about.html"><i class="ph ph-info"></i> About Us</a></li>
+                        <li><a href="team.html"><i class="ph ph-users"></i> Team</a></li>
+                        <li><a href="support.html"><i class="ph ph-headset"></i> Support</a></li>
+                        <li><a href="payment.html"><i class="ph ph-wallet"></i> Payment</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank" title="Join our Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="mailto:ironcloudmc@gmail.com" title="Send us an email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="tel:01821925430" title="Call us">
-                            <i class="fas fa-phone-alt"></i>
-                        </a>
+                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank" rel="noopener" title="Join our Discord" aria-label="Join our Discord"><i class="ph ph-discord-logo"></i></a>
+                        <a href="mailto:ironcloudmc@gmail.com" title="Email us" aria-label="Email us"><i class="ph ph-envelope"></i></a>
+                        <a href="tel:01821925430" title="Call us" aria-label="Call us"><i class="ph ph-phone"></i></a>
                     </div>
-                    <div class="newsletter" style="margin-top: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Stay updated with server news</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Your email" class="form-control" style="margin-bottom: 0.5rem;">
-                            <button class="btn btn-primary" style="width: 100%; padding: 10px;">Subscribe</button>
-                        </div>
-                    </div>
+                    <ul>
+                        <li><a href="privacy.html"><i class="ph ph-receipt"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="ph ph-receipt"></i> Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2020 IRON CLOUD MC. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for the Minecraft community</p>
+                <p>© 2026 IRON CLOUD MC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How do I join the server?", "acceptedAnswer": {"@type": "Answer", "text": "Add play.ironcloudmc.fun in Minecraft and hit Join. The server is free to join."}},
+            {"@type": "Question", "name": "Do you support Java and Bedrock?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both Java and Bedrock Edition players join the same server."}},
+            {"@type": "Question", "name": "What versions do you support?", "acceptedAnswer": {"@type": "Answer", "text": "Versions 1.8 to the latest 1.21.8."}},
+            {"@type": "Question", "name": "How do I buy ranks, coins, or crate keys?", "acceptedAnswer": {"@type": "Answer", "text": "Choose a package in the store, then complete the payment on the payment page."}},
+            {"@type": "Question", "name": "How long does delivery take?", "acceptedAnswer": {"@type": "Answer", "text": "Items are delivered after payment verification, usually within 15 minutes."}},
+            {"@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": {"@type": "Answer", "text": "Bkash and Nagad."}},
+            {"@type": "Question", "name": "Can I get a refund?", "acceptedAnswer": {"@type": "Answer", "text": "Digital purchases are generally not refunded."}}
+        ]
+    }
+    </script>
+
     <script src="js/main.js"></script>
-    <script src="js/store.js"></script>
 </body>
-
 </html>
-
