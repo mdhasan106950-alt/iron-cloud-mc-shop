@@ -12,7 +12,7 @@
     const menu = document.querySelector('.mobile-menu');
 
     if (toggle && menu) {
-        const links = Array.from(menu.querySelectorAll('a'));
+        const links = Array.from(menu.querySelectorAll('a, button'));
         // Stagger link entrance: each item 60ms after the previous, cap 400ms
         const step = links.length > 7 ? 50 : 60;
         links.forEach((link, i) => {

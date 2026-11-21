@@ -551,6 +551,21 @@ section {
 
 .mobile-menu a .ph { font-size: 1.3em; color: var(--text-muted); }
 
+.mobile-menu .btn {
+    display: inline-flex;
+    transform: translateY(24px);
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-12) var(--s-16);
+    margin-top: var(--s-24);
+    width: 100%;
+    border: none;
+    transition: transform 0.5s var(--ease), opacity 0.5s var(--ease), background-color var(--dur), color var(--dur), border-color var(--dur);
+}
+.mobile-menu.open .btn { transform: translateY(0); opacity: 1; }
+.mobile-menu .btn:active { transform: scale(0.98); }
+
 /* ---------------- Hero ---------------- */
 
 .hero {
@@ -1985,13 +2000,15 @@ section {
     .benefits-grid { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 1024px) {
+    .nav-menu { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .nav-cta { display: none; }
+}
+
 @media (max-width: 768px) {
     :root { --nav-h: 56px; }
     .navbar { border-radius: var(--radius-xl); top: var(--s-8); margin-top: var(--s-8); width: calc(100% - var(--s-16)); }
-    .nav-menu { display: none; }
-    .nav-toggle { display: inline-flex; }
-    .mobile-menu { display: flex; }
-    .nav-cta { display: none; }
     .hero { padding-top: var(--s-48); padding-bottom: var(--s-64); }
     .heading-1 { font-size: var(--text-5xl); }
     .heading-2 { font-size: var(--text-4xl); }
