@@ -1,0 +1,236 @@
+/* Self-hosted Phosphor icons (subset) */
+@font-face {
+  font-family: "Phosphor";
+  src: url("../icons/Phosphor.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ph {
+  font-family: "Phosphor" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ph.ph-house:before {
+  content: "\e2c2";
+}
+.ph.ph-storefront:before {
+  content: "\e470";
+}
+.ph.ph-crown:before {
+  content: "\e614";
+}
+.ph.ph-coins:before {
+  content: "\e78e";
+}
+.ph.ph-key:before {
+  content: "\e2d6";
+}
+.ph.ph-info:before {
+  content: "\e2ce";
+}
+.ph.ph-users:before {
+  content: "\e4d6";
+}
+.ph.ph-headset:before {
+  content: "\e584";
+}
+.ph.ph-arrow-right:before {
+  content: "\e06c";
+}
+.ph.ph-copy:before {
+  content: "\e1ca";
+}
+.ph.ph-check:before {
+  content: "\e182";
+}
+.ph.ph-caret-down:before {
+  content: "\e136";
+}
+.ph.ph-list:before {
+  content: "\e2f0";
+}
+.ph.ph-x:before {
+  content: "\e4f6";
+}
+.ph.ph-sparkle:before {
+  content: "\e6a2";
+}
+.ph.ph-trophy:before {
+  content: "\e67e";
+}
+.ph.ph-game-controller:before {
+  content: "\e26e";
+}
+.ph.ph-shield-check:before {
+  content: "\e40c";
+}
+.ph.ph-star:before {
+  content: "\e46a";
+}
+.ph.ph-clock:before {
+  content: "\e19a";
+}
+.ph.ph-wallet:before {
+  content: "\e68a";
+}
+.ph.ph-device-mobile:before {
+  content: "\e1e0";
+}
+.ph.ph-envelope:before {
+  content: "\e214";
+}
+.ph.ph-phone:before {
+  content: "\e3b8";
+}
+.ph.ph-globe:before {
+  content: "\e288";
+}
+.ph.ph-fire:before {
+  content: "\e242";
+}
+.ph.ph-hammer:before {
+  content: "\e80e";
+}
+.ph.ph-sword:before {
+  content: "\e5ba";
+}
+.ph.ph-mountains:before {
+  content: "\e7ae";
+}
+.ph.ph-skull:before {
+  content: "\e916";
+}
+.ph.ph-tent:before {
+  content: "\e8ba";
+}
+.ph.ph-shopping-bag:before {
+  content: "\e416";
+}
+.ph.ph-medal:before {
+  content: "\e320";
+}
+.ph.ph-heart:before {
+  content: "\e2a8";
+}
+.ph.ph-play:before {
+  content: "\e3d0";
+}
+.ph.ph-caret-circle-down:before {
+  content: "\e11e";
+}
+.ph.ph-arrow-left:before {
+  content: "\e058";
+}
+.ph.ph-compass:before {
+  content: "\e1c8";
+}
+.ph.ph-flag:before {
+  content: "\e244";
+}
+.ph.ph-rocket:before {
+  content: "\e3fc";
+}
+.ph.ph-coin-vertical:before {
+  content: "\eb48";
+}
+.ph.ph-hand-coins:before {
+  content: "\ea8c";
+}
+.ph.ph-plant:before {
+  content: "\ebae";
+}
+.ph.ph-hard-hat:before {
+  content: "\ed46";
+}
+.ph.ph-shield-star:before {
+  content: "\ec34";
+}
+.ph.ph-users-three:before {
+  content: "\e68e";
+}
+.ph.ph-user-check:before {
+  content: "\eafa";
+}
+.ph.ph-user-circle-check:before {
+  content: "\ec38";
+}
+.ph.ph-user-gear:before {
+  content: "\e4cc";
+}
+.ph.ph-circle-dashed:before {
+  content: "\e602";
+}
+.ph.ph-discord-logo:before {
+  content: "\e61a";
+}
+.ph.ph-link:before {
+  content: "\e2e2";
+}
+.ph.ph-map-pin:before {
+  content: "\e316";
+}
+.ph.ph-calendar:before {
+  content: "\e108";
+}
+.ph.ph-wrench:before {
+  content: "\e5d4";
+}
+.ph.ph-arrow-up-right:before {
+  content: "\e092";
+}
+.ph.ph-arrow-down-right:before {
+  content: "\e042";
+}
+.ph.ph-sign-in:before {
+  content: "\e428";
+}
+.ph.ph-sign-out:before {
+  content: "\e42a";
+}
+.ph.ph-arrows-in-line-horizontal:before {
+  content: "\e530";
+}
+.ph.ph-arrows-in-simple:before {
+  content: "\e09e";
+}
+.ph.ph-arrows-out-simple:before {
+  content: "\e0a6";
+}
+.ph.ph-arrow-down:before {
+  content: "\e03e";
+}
+.ph.ph-arrow-up:before {
+  content: "\e08e";
+}
+.ph.ph-gear:before {
+  content: "\e270";
+}
+.ph.ph-arrow-square-out:before {
+  content: "\e5de";
+}
+.ph.ph-receipt:before {
+  content: "\e3ec";
+}
+.ph.ph-leaf:before {
+  content: "\e2da";
+}
+.ph.ph-play-circle:before {
+  content: "\e3d2";
+}
+.ph.ph-arrows-out-line-horizontal:before {
+  content: "\e534";
+}

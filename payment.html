@@ -3,274 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment - IRON CLOUD MC</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Payment — IRON CLOUD MC</title>
+    <meta name="description" content="Complete your purchase for ranks, coins, and crate keys on IRON CLOUD MC.">
+    <meta name="theme-color" content="#181818">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta property="og:title" content="Payment — IRON CLOUD MC">
+    <meta property="og:description" content="Complete your purchase for ranks, coins, and crate keys on IRON CLOUD MC.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IRON CLOUD MC">
+        <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="nav-logo">
-                <img src="images/logo.png" alt="IRON CLOUD MC">
+            <a class="nav-logo" href="index.html" aria-label="IRON CLOUD MC home">
+                <img src="images/logo.png" alt="" width="32" height="32">
                 <span>IRON CLOUD MC</span>
-            </div>
+            </a>
             <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="store.html" class="nav-link">Store</a>
-                <a href="payment.html" class="nav-link active">Payment</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="team.html" class="nav-link">Team</a>
-                <a href="support.html" class="nav-link">Support</a>
+                        <a href="index.html">Home</a>
+                        <a href="store.html">Store</a>
+                        <a href="ranks.html">Ranks</a>
+                        <a href="coins.html">Coins</a>
+                        <a href="keys.html">Keys</a>
+                        <a href="about.html">About</a>
+                        <a href="team.html">Team</a>
+                        <a href="support.html">Support</a>
             </div>
-            <div class="nav-toggle">
+            <button class="btn btn-primary btn-sm nav-cta" data-copy="play.ironcloudmc.fun" aria-label="Copy server IP">
+                <i class="ph ph-copy"></i> Join the server
+            </button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Payment Header -->
-    <section class="hero" style="height: 40vh; min-height: 300px;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Complete Your Purchase</h1>
-            <p class="hero-subtitle">Secure payment processing</p>
-        </div>
-    </section>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <a href="index.html">Home<i class="ph ph-house"></i></a>
+        <a href="store.html">Store<i class="ph ph-storefront"></i></a>
+        <a href="ranks.html">Ranks<i class="ph ph-crown"></i></a>
+        <a href="coins.html">Coins<i class="ph ph-coins"></i></a>
+        <a href="keys.html">Crate Keys<i class="ph ph-key"></i></a>
+        <a href="about.html">About<i class="ph ph-info"></i></a>
+        <a href="team.html">Team<i class="ph ph-users"></i></a>
+        <a href="support.html">Support<i class="ph ph-headset"></i></a>
+        <button class="btn btn-primary" data-copy="play.ironcloudmc.fun" style="width: 100%; justify-content: center; margin-top: var(--s-24);">
+            <i class="ph ph-copy"></i> Join the server
+        </button>
+    </div>
+    <main id="main">
 
-    <!-- Payment Section -->
-    <section class="features">
-        <div class="container">
-            <div class="payment-container">
-                <div class="payment-form scroll-animate">
-                    <h2 style="text-align: center; margin-bottom: 30px; color: var(--accent);">Payment Details</h2>
-                    
-                    <form id="payment-form">
-                        <div class="form-group">
-                            <label for="username">Minecraft Username *</label>
-                            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your Minecraft username" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="product">Selected Product</label>
-                            <input type="text" id="product" name="product" class="form-control" value="None" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Payment Method *</label>
-                            <div class="payment-methods">
-                                <div class="payment-method" data-payment="bkash">
-                                    <div class="payment-icon">
-                                        <i class="fas fa-mobile-alt"></i>
+        <section class="page-hero">
+            <div class="container">
+                <p class="chip reveal"><i class="ph ph-wallet"></i> Store</p>
+                <h1 class="heading-2 reveal">Complete Your Purchase</h1>
+                <p class="page-hero-sub reveal">Secure payment processing. Select your product from the store first.</p>
+            </div>
+        </section>
+        <section aria-label="Payment form">
+            <div class="container">
+                <div class="payment-container">
+                    <div class="payment-form reveal">
+                        <h2 class="heading-5">Payment Details</h2>
+                        <form id="payment-form" novalidate>
+                            <div class="form-group">
+                                <label for="username">Minecraft Username *</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your Minecraft username" autocomplete="nickname" required>
+                                <p class="form-error"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" autocomplete="email" required>
+                                <p class="form-error"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="product">Selected Product</label>
+                                <input type="text" id="product" name="product" class="form-control" value="None" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Payment Method *</label>
+                                <div class="payment-methods">
+                                    <div class="payment-method" data-payment="bkash" role="button" tabindex="0" aria-pressed="false">
+                                        <i class="ph ph-device-mobile"></i>
+                                        <span>Bkash</span>
                                     </div>
-                                    <span>Bkash</span>
-                                </div>
-                                <div class="payment-method" data-payment="nagad">
-                                    <div class="payment-icon">
-                                        <i class="fas fa-wallet"></i>
+                                    <div class="payment-method" data-payment="nagad" role="button" tabindex="0" aria-pressed="false">
+                                        <i class="ph ph-wallet"></i>
+                                        <span>Nagad</span>
                                     </div>
-                                    <span>Nagad</span>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Bkash Payment Details -->
-                        <div class="payment-details" data-payment="bkash">
-                            <h3>Bkash Payment Instructions</h3>
-                            <p>Send payment to: <strong>01821925430</strong></p>
-                            <ol>
-                                <li>Go to your bKash Mobile Menu by dialing *247#</li>
-                                <li>Choose "Send Money"</li>
-                                <li>Enter our bKash Account Number: <strong>01821925430</strong></li>
-                                <li>Enter the amount: <strong id="bkash-amount">৳0</strong></li>
-                                <li>Enter reference: <strong id="bkash-reference">IRONCLOUD</strong></li>
-                                <li>Enter your bKash Mobile Menu PIN to confirm</li>
-                            </ol>
-                            <div class="form-group">
-                                <label for="bkash-transaction">bKash Transaction ID *</label>
-                                <input type="text" id="bkash-transaction" name="bkash-transaction" class="form-control" placeholder="Enter your bKash transaction ID">
+                            <div class="payment-details" data-payment="bkash">
+                                <h3>Bkash Payment Instructions</h3>
+                                <p>Send payment to: <strong>01821925430</strong></p>
+                                <ol>
+                                    <li>Go to your bKash Mobile Menu by dialing *247#</li>
+                                    <li>Choose "Send Money"</li>
+                                    <li>Enter our bKash Account Number: <strong>01821925430</strong></li>
+                                    <li>Enter the amount: <strong id="bkash-amount">৳0</strong></li>
+                                    <li>Enter reference: <strong id="bkash-reference">IRONCLOUD</strong></li>
+                                    <li>Enter your bKash Mobile Menu PIN to confirm</li>
+                                </ol>
+                                <div class="form-group">
+                                    <label for="bkash-transaction">bKash Transaction ID *</label>
+                                    <input type="text" id="bkash-transaction" name="bkash-transaction" class="form-control" placeholder="Enter your bKash transaction ID">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bkash-sender">bKash Sender Number *</label>
+                                    <input type="text" id="bkash-sender" name="bkash-sender" class="form-control" placeholder="Enter your bKash number">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="bkash-sender">bKash Sender Number *</label>
-                                <input type="text" id="bkash-sender" name="bkash-sender" class="form-control" placeholder="Enter your bKash number">
+
+                            <div class="payment-details" data-payment="nagad">
+                                <h3>Nagad Payment Instructions</h3>
+                                <p>Send payment to: <strong>01821925430</strong></p>
+                                <ol>
+                                    <li>Open your Nagad App or dial *167#</li>
+                                    <li>Choose "Send Money"</li>
+                                    <li>Enter our Nagad Account Number: <strong>01821925430</strong></li>
+                                    <li>Enter the amount: <strong id="nagad-amount">৳0</strong></li>
+                                    <li>Enter reference: <strong id="nagad-reference">IRONCLOUD</strong></li>
+                                    <li>Enter your Nagad PIN to confirm</li>
+                                </ol>
+                                <div class="form-group">
+                                    <label for="nagad-transaction">Nagad Transaction ID *</label>
+                                    <input type="text" id="nagad-transaction" name="nagad-transaction" class="form-control" placeholder="Enter your Nagad transaction ID">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nagad-sender">Nagad Sender Number *</label>
+                                    <input type="text" id="nagad-sender" name="nagad-sender" class="form-control" placeholder="Enter your Nagad number">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Nagad Payment Details -->
-                        <div class="payment-details" data-payment="nagad">
-                            <h3>Nagad Payment Instructions</h3>
-                            <p>Send payment to: <strong>01821925430</strong></p>
-                            <ol>
-                                <li>Open your Nagad App or dial *167#</li>
-                                <li>Choose "Send Money"</li>
-                                <li>Enter our Nagad Account Number: <strong>01821925430</strong></li>
-                                <li>Enter the amount: <strong id="nagad-amount">৳0</strong></li>
-                                <li>Enter reference: <strong id="nagad-reference">IRONCLOUD</strong></li>
-                                <li>Enter your Nagad PIN to confirm</li>
-                            </ol>
                             <div class="form-group">
-                                <label for="nagad-transaction">Nagad Transaction ID *</label>
-                                <input type="text" id="nagad-transaction" name="nagad-transaction" class="form-control" placeholder="Enter your Nagad transaction ID">
+                                <label for="message">Additional Notes (Optional)</label>
+                                <textarea id="message" name="message" class="form-control" rows="3" placeholder="Any additional information..."></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="nagad-sender">Nagad Sender Number *</label>
-                                <input type="text" id="nagad-sender" name="nagad-sender" class="form-control" placeholder="Enter your Nagad number">
-                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Complete Purchase</button>
+                        </form>
+                    </div>
+
+                    <aside class="payment-summary reveal" aria-label="Order summary">
+                        <h3 class="heading-6">Order Summary</h3>
+                        <div class="summary-item"><span>Product:</span><span id="selected-product">None</span></div>
+                        <div class="summary-item"><span>Price:</span><span id="product-price">৳0</span></div>
+                        <div class="summary-item"><span>Processing Fee:</span><span>৳0</span></div>
+                        <div class="summary-item summary-total"><span>Total:</span><span id="total-price">৳0</span></div>
+                        <div class="note-box">
+                            <h4>Important Notes</h4>
+                            <ul>
+                                <li>Delivery is usually instant after payment verification</li>
+                                <li>Make sure your Minecraft username is correct</li>
+                                <li>Keep your transaction ID for reference</li>
+                                <li>Contact support if you do not receive items within 15 minutes</li>
+                            </ul>
                         </div>
-
-                        <div class="form-group">
-                            <label for="message">Additional Notes (Optional)</label>
-                            <textarea id="message" name="message" class="form-control" rows="3" placeholder="Any additional information..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Complete Purchase</button>
-                    </form>
-                </div>
-
-                <!-- Payment Summary -->
-                <div class="payment-summary scroll-animate">
-                    <h3 style="margin-bottom: 20px; color: var(--accent);">Order Summary</h3>
-                    <div class="summary-item">
-                        <span>Product:</span>
-                        <span id="selected-product">None</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Price:</span>
-                        <span id="product-price">৳0</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Processing Fee:</span>
-                        <span>৳0</span>
-                    </div>
-                    <div class="summary-item summary-total">
-                        <span>Total:</span>
-                        <span id="total-price">৳0</span>
-                    </div>
-
-                    <div style="margin-top: 20px; padding: 15px; background: rgba(60, 9, 108, 0.3); border-radius: 5px;">
-                        <h4 style="color: var(--accent); margin-bottom: 10px;">Important Notes</h4>
-                        <ul style="font-size: 0.9rem; color: var(--text-secondary);">
-                            <li>Delivery is usually instant after payment verification</li>
-                            <li>Make sure your Minecraft username is correct</li>
-                            <li>Keep your transaction ID for reference</li>
-                            <li>Contact support if you don't receive items within 15 minutes</li>
-                        </ul>
-                    </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>IRON CLOUD MC</h3>
-                    <p>The ultimate Minecraft experience since 2019. Join our community today!</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="nav-logo" href="index.html" aria-label="IRON CLOUD MC home">
+                        <img src="images/logo.png" alt="" width="32" height="32">
+                        <span>IRON CLOUD MC</span>
+                    </a>
+                    <p>The Minecraft server with a community that pulls its weight. Java and Bedrock, free to join, together since 2019.</p>
+                    <div class="status-row"><span class="dot"></span> Server online</div>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store.html">Store</a></li>
-                        <li><a href="payment.html">Payment</a></li>
-                        <li><a href="support.html">Support</a></li>
+                        <li><a href="index.html"><i class="ph ph-house"></i> Home</a></li>
+                        <li><a href="store.html"><i class="ph ph-storefront"></i> Store</a></li>
+                        <li><a href="ranks.html"><i class="ph ph-crown"></i> Ranks</a></li>
+                        <li><a href="coins.html"><i class="ph ph-coins"></i> Coins</a></li>
+                        <li><a href="keys.html"><i class="ph ph-key"></i> Crate Keys</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html"><i class="ph ph-info"></i> About Us</a></li>
+                        <li><a href="team.html"><i class="ph ph-users"></i> Team</a></li>
+                        <li><a href="support.html"><i class="ph ph-headset"></i> Support</a></li>
+                        <li><a href="payment.html"><i class="ph ph-wallet"></i> Payment</a></li>
+                    </ul>
+                </div>
+                <div>
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a href="mailto:ironcloudmc@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://discord.gg/ErBVfVqEVg" target="_blank" rel="noopener" title="Join our Discord" aria-label="Join our Discord"><i class="ph ph-discord-logo"></i></a>
+                        <a href="mailto:ironcloudmc@gmail.com" title="Email us" aria-label="Email us"><i class="ph ph-envelope"></i></a>
+                        <a href="tel:01821925430" title="Call us" aria-label="Call us"><i class="ph ph-phone"></i></a>
                     </div>
+                    <ul>
+                        <li><a href="privacy.html"><i class="ph ph-receipt"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="ph ph-receipt"></i> Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2020 IRON CLOUD MC. All rights reserved.</p>
+                <p>© 2026 IRON CLOUD MC. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
-    <script src="js/store.js"></script>
-    <script>
-        // Get URL parameters for product and price
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const product = urlParams.get('product');
-            const price = urlParams.get('price');
-            
-            if (product && price) {
-                document.getElementById('product').value = product;
-                document.getElementById('selected-product').textContent = product;
-                document.getElementById('product-price').textContent = `৳${price}`;
-                document.getElementById('total-price').textContent = `৳${price}`;
-                document.getElementById('bkash-amount').textContent = `৳${price}`;
-                document.getElementById('nagad-amount').textContent = `৳${price}`;
-                
-                // Generate random reference
-                const reference = 'IRON' + Math.floor(1000 + Math.random() * 9000);
-                document.getElementById('bkash-reference').textContent = reference;
-                document.getElementById('nagad-reference').textContent = reference;
-            }
-            
-            // Payment method selection
-            const paymentMethods = document.querySelectorAll('.payment-method');
-            const paymentDetails = document.querySelectorAll('.payment-details');
-            
-            paymentMethods.forEach(method => {
-                method.addEventListener('click', function() {
-                    paymentMethods.forEach(m => m.classList.remove('active'));
-                    paymentDetails.forEach(detail => detail.classList.remove('active'));
-                    
-                    this.classList.add('active');
-                    const paymentType = this.getAttribute('data-payment');
-                    document.querySelector(`.payment-details[data-payment="${paymentType}"]`).classList.add('active');
-                });
-            });
-            
-            // Form submission
-            document.getElementById('payment-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const username = document.getElementById('username').value;
-                const product = document.getElementById('product').value;
-                const price = document.getElementById('total-price').textContent;
-                const paymentMethod = document.querySelector('.payment-method.active');
-                
-                if (!paymentMethod) {
-                    alert('Please select a payment method');
-                    return;
-                }
-                
-                const paymentType = paymentMethod.getAttribute('data-payment');
-                
-                alert(`Thank you for your purchase!\n\nUsername: ${username}\nProduct: ${product}\nPrice: ${price}\nPayment Method: ${paymentType}\n\nPlease complete the payment using the instructions and keep your transaction ID safe. Your items will be delivered within 15 minutes after payment verification.`);
-                
-                // Reset form
-                this.reset();
-                paymentMethods.forEach(method => method.classList.remove('active'));
-                paymentDetails.forEach(detail => detail.classList.remove('active'));
-                
-                // Reset summary
-                document.getElementById('product').value = 'None';
-                document.getElementById('selected-product').textContent = 'None';
-                document.getElementById('product-price').textContent = '৳0';
-                document.getElementById('total-price').textContent = '৳0';
-                document.getElementById('bkash-amount').textContent = '৳0';
-                document.getElementById('nagad-amount').textContent = '৳0';
-            });
-        });
-    </script>
+    <script src="js/store.js"></script>    <script src="js/main.js"></script>
 </body>
 </html>
